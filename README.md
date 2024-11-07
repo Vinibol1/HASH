@@ -4,7 +4,7 @@
 
 # TDA HASH
 
-## Repositorio de (Nombre Apellido) - (Padrón) - (Mail)
+## Repositorio de Tobias Portella - 112257 - tobias240405@gmail.com
 
 - Para compilar:
 
