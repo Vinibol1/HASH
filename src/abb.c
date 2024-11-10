@@ -246,7 +246,7 @@ size_t abb_iterar_postorden_aux(abb_t *abb, bool (*f)(void *, void *),
 		contador += abb_iterar_postorden_aux(&abb_temp, f, ctx,
 						     seguir_iterando);
 	}
-	if (abb->raiz) {
+	if (abb->raiz) {                
 		if (*seguir_iterando == false)
 			return contador;
 		*seguir_iterando = f(abb->raiz->elemento, ctx);
@@ -301,7 +301,7 @@ void liberar_nodos(abb_t *abb, void (*destructor)(void *))
 
 	free(abb->raiz);
 }
-
+	
 void abb_destruir(abb_t *abb)
 {
 	if (!abb)

@@ -9,18 +9,18 @@
 - Para compilar:
 
 ```bash
-línea de compilación
+gcc -std=c99 -Wall -Wconversion -Wtype-limits -pedantic -Werror -O2 -g src/*.c tp_hash.c -o tp_hash 
 ```
 
 - Para ejecutar:
 
 ```bash
-línea de ejecución
+./tp_hash pokedex.csv
 ```
 
 - Para ejecutar con valgrind:
 ```bash
-línea con valgrind
+valgrind --leak-check=full --track-origins=yes --show-reachable=yes --error-exitcode=2 --show-leak-kinds=all --trace-children=yes ./tp_hash pokedex.csv
 ```
 ---
 ##  Funcionamiento
@@ -57,4 +57,25 @@ vector_original = vector;
 ---
 
 ## Respuestas a las preguntas teóricas
+---Un diccionarios es un TDA el cual se caracteriza por tener una clave asociada a los valores ingresados, por lo que se buscaría al elemento por la clave y no por el valor, no existen las claves repetidas
 Incluír acá las respuestas a las preguntas del enunciado (si aplica).
+
+<div align="center">
+<img width="70%" src="img/diccionario.png">
+</div>
+
+---Una forma de implementar un diccionario es con una tabla de hash, esta implementación usa una función de hash para transformar la clave en un indice de la tabla, intentando acercar su busqueda a una complejidad de O(1). otra forma de implementar un diccionario seria con una lista y que cada elemento de la lista sea una estructura que almacene la clave y el valor, esto tendría una complejidad para buscar de O(n). un diccionario se podria implementar con infinidad de estructuras de datos, otro ejemplo de esto sería implementarlo con un abb y almacenar una estructura con clave y valor de elemento.
+
+
+---Una función hash es una función que convierte un elemento pasado en otro, ya sea un numero, una cadena, etc, siendo estos elementos de salida finitos, esta función en nuestro caso necesitamos que dado una cadena de caracteres la salida seam enteros, vamos a tratar que la función de un numero diferente para distintas cadena de caracteres así cada cadenas tiene un propio numero asociado.
+
+<div align="center">
+<img width="70%" src="img/funcion_hash.png">
+</div>
+
+
+
+   - Qué es una tabla de Hash y los diferentes métodos de resolución de colisiones vistos (encadenamiento, probing, etc)
+   - Explique por qué es importante el tamaño de la tabla (tanto para tablas abiertas como cerradas)
+     - Dado que en una tabla abierta se pueden encadenar colisiones sin importar el tamaño de la tabla, ¿Realmente importa el tamaño?
+   - Mas te vale que expliques con dibujos
