@@ -38,7 +38,7 @@ valgrind --leak-check=full --track-origins=yes --show-reachable=yes --error-exit
 ---Luego al finalizar el programa se libera toda la memoria del programa usando sus respectivas funciónes de liberación.
 ## Respuestas a las preguntas teóricas
 
-###Qué es un diccionario
+### Qué es un diccionario
 
 ---Un diccionarios es un TDA el cual se caracteriza por tener una clave asociada a los valores ingresados, por lo que se buscaría al elemento por la clave y no por el valor, no existen las claves repetidas
 Incluír acá las respuestas a las preguntas del enunciado (si aplica).
@@ -47,7 +47,7 @@ Incluír acá las respuestas a las preguntas del enunciado (si aplica).
 <img width="70%" src="img/diccionario.png">
 </div>
 
-###Explicá 3 formas diferentes de implementar un diccionario (tabla de hash cuenta como 1)
+### Explicá 3 formas diferentes de implementar un diccionario (tabla de hash cuenta como 1)
 
 ---Una forma de implementar un diccionario es con una tabla de hash, esta implementación usa una función de hash para transformar 
 la clave en un indice de la tabla, intentando acercar su busqueda a una complejidad de O(1). otra forma de implementar un diccionario 
@@ -55,7 +55,7 @@ seria con una lista y que cada elemento de la lista sea una estructura que almac
 buscar de O(n). un diccionario se podria implementar con infinidad de estructuras de datos, otro ejemplo de esto sería implementarlo 
 con un abb y almacenar una estructura con clave y valor de elemento.
 
-###Qué es una función de hash y qué características debe tener para nuestro problema en particular
+### Qué es una función de hash y qué características debe tener para nuestro problema en particular
 
 ---Una función hash es una función que convierte un elemento pasado en otro, ya sea un numero, una cadena, etc, siendo estos 
 elementos de salida finitos, esta función en nuestro caso necesitamos que dado una cadena de caracteres la salida seam enteros, vamos a 
@@ -65,7 +65,7 @@ tratar que la función de un numero diferente para distintas cadena de caractere
 <img width="70%" src="img/funcion_hash.png">
 </div>
 
-###Qué es una tabla de Hash y los diferentes métodos de resolución de colisiones vistos (encadenamiento, probing, etc)
+### Qué es una tabla de Hash y los diferentes métodos de resolución de colisiones vistos (encadenamiento, probing, etc)
 
 ---Una tabla de hash es una estructura de datos que se utiliza para almacenar y acceder a información de manera 
 rápida, En una tabla de hash, los datos se almacenan en índices calculadas por una función de hash. 
@@ -76,7 +76,7 @@ valores que colisionan en una estructura de datos ya sea lista, arbol, etc, en c
 ---El probing es un metodo para resolver colisiones que cuando ocurre una colisión, se busca la siguiente posición 
 libre en la tabla para insertar el nuevo valor.
 
-###Explique por qué es importante el tamaño de la tabla (tanto para tablas abiertas como cerradas)
+### Explique por qué es importante el tamaño de la tabla (tanto para tablas abiertas como cerradas)
 
 ---El tamaño de la tabla de hash afecta rendimiento de cualquier tabla de hash ya que mientras el tamaño es finito y los elementos son 
 infinitos, ya sea que se utilice un hash abierto o cerrado.  El tamaño de la tabla afecta directamente tanto a la eficiencia de  almacenamiento como al 
@@ -87,9 +87,9 @@ rendimiento de las operaciones en la tabla (búsqueda, inserción, eliminación)
 <img width="70%" src="img/tabla_hash_cerrado.png">
 </div>
 
-###Dado que en una tabla abierta se pueden encadenar colisiones sin importar el tamaño de la tabla, ¿Realmente importa el tamaño?
+### Dado que en una tabla abierta se pueden encadenar colisiones sin importar el tamaño de la tabla, ¿Realmente importa el tamaño?
 
-si es importante ya que si hay muchas colisiones en un mismo indice el rendimiento del hash no va a ser el buscado, ya que al tener todo apilado 
+si, es importante, ya que si hay muchas colisiones en un mismo indice el rendimiento del hash no va a ser el buscado, ya que al tener todo apilado 
 en un mismo indice la compllejidad pasaría de O(1) a O(n)
 <div align="center">
 <img width="70%" src="img/tabla_hash.png">
