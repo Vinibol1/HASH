@@ -11,9 +11,9 @@ struct archivo_csv {
 struct archivo_csv *abrir_archivo_csv(const char *nombre_archivo,
 				      char separador)
 {
-	if (nombre_archivo == NULL) {
+	if (nombre_archivo == NULL)
 		return NULL;
-	}
+
 	struct archivo_csv *archivo = malloc(sizeof(struct archivo_csv));
 	if (archivo == NULL) {
 		free(archivo);
@@ -27,11 +27,11 @@ struct archivo_csv *abrir_archivo_csv(const char *nombre_archivo,
 	archivo->separador = separador;
 	return archivo;
 }
-/** 
- * la funcion necesita que haya la misma cantidad de funciones que 
+/**
+ * la funcion necesita que haya la misma cantidad de funciones que
  * de columnas que se quieran leer
  * esta devuelve la cantidad de columnas leídas correctamente.
-*/
+ */
 size_t leer_linea_csv(struct archivo_csv *archivo, size_t columnas,
 		      bool (*funciones[])(const char *, void *), void *ctx[])
 {

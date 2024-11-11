@@ -41,7 +41,7 @@ struct pokemon *encontrar_pokemon_buscado(hash_t *pokedex,
 	return pokemon;
 }
 
-bool imprimir_pokemones_por_pantalla(char*clave, void *elemento, void *ctx)
+bool imprimir_pokemones_por_pantalla(char *clave, void *elemento, void *ctx)
 {
 	if (!elemento)
 		return false;
@@ -55,7 +55,7 @@ bool imprimir_pokemones_por_pantalla(char*clave, void *elemento, void *ctx)
 
 void destruir_pokemon(void *pokemon)
 {
-	struct pokemon *pokemon_actual = pokemon	;
+	struct pokemon *pokemon_actual = pokemon;
 	free(pokemon_actual->nombre);
 	free(pokemon_actual);
 }
@@ -119,7 +119,7 @@ int main(int argc, char *argv[])
 		pokemon->fuerza = fuerza;
 		pokemon->destreza = destreza;
 		pokemon->resistencia = resistencia;
-		if (!hash_insertar(pokedex, pokemon->nombre,pokemon,NULL)) {
+		if (!hash_insertar(pokedex, pokemon->nombre, pokemon, NULL)) {
 			hash_destruir(pokedex);
 			cerrar_archivo_csv(archivo);
 			return ERROR;
@@ -149,8 +149,8 @@ int main(int argc, char *argv[])
 			es_correcto = true;
 			break;
 		case 2:
-			hash_iterar(
-				pokedex, imprimir_pokemones_por_pantalla, NULL);
+			hash_iterar(pokedex, imprimir_pokemones_por_pantalla,
+				    NULL);
 			es_correcto = true;
 			break;
 
